@@ -1,0 +1,46 @@
+.nav-link {
+    color: white;
+}
+
+.hero {
+    /* Flexbox stuff */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Sizing */
+    width: 100vw;
+    height: 100vh;
+}
+
+.hero::before {
+/* Allows for adding opacity without affecting form */
+/* Background styles */
+    content: "";
+    position: absolute;
+    background-image: url("../images/grill.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: .9;
+}
+
+.card-header {
+    text-align: center;
+}
+
+.card-header h5 {
+    line-height: 1.5em;
+}
+
+.reso-button {
+    text-align: center;
+    display: block;
+    margin: auto 0;
+}

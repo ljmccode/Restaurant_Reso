@@ -1,0 +1,21 @@
+.hero {
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Sizing */
+    width: 100vw;
+    height: 100vh;
+
+    /* Background styles */
+    background-image: url("../images/patio.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.nav-link {
+    color: white;
+}
