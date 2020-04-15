@@ -1,8 +1,8 @@
 let reservations = [
     { 
         name: "O'Brien",
-        phone: 3637727772,
-        size: 4
+        size: 4,
+        phone: 3637727772
     }
 ];
 
