@@ -6,16 +6,16 @@ module.exports = app => {
 
     // Make Reservation Page
     app.get("/reservations", (request, response) => {
-        response.sendFile(path.join(__dirname, "../public/reso.html"))
+        response.sendFile(path.join(__dirname, "../views/reso.html"))
     });
 
     // See Tables Page
     app.get("/tables", (request, response) => {
-        response.sendFile(path.join(__dirname, "../public/tables.html"))
+        response.sendFile(path.join(__dirname, "../views/tables.html"))
     });
 
     // All other routes head to home page
     app.get("*", (request, response) => {
-        response.sendFile(path.join(__dirname, "../public/home.html"))
+        response.sendFile(path.join(__dirname, "../views/home.html"))
     })
 };
