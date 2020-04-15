@@ -1,6 +1,6 @@
 // Link data
-require("../data/reservations");
-require("../data/waitlist");
+let reservations = require("../data/reservations");
+let waitlist = require("../data/waitlist");
 
 
 module.exports = app => {

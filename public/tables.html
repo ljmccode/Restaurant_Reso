@@ -9,17 +9,17 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/tables.css">
   <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
   <!-- Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
   <nav class="navbar navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand text-warning" href="home.html">Sunny Grill</a>
+    <a class="navbar-brand text-warning" href="/">Sunny Grill</a>
     <ul class="nav justify-content-end mr-3">
       <li class="nav-item active">
-        <a class="nav-link" href="home.html">Home</a>
+        <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -27,17 +27,95 @@
           Reservations
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="reso.html">Make a Reservation</a>
-          <a class="dropdown-item" href="tables.html">View Waitlist</a>
+          <a class="dropdown-item" href="/reservations">Make a Reservation</a>
+          <a class="dropdown-item" href="/tables">View Waitlist</a>
         </div>
       </li>
     </ul>
   </nav>
   <section class="hero">
     <div class="hero-inner">
+      <!-- Current Tables in Use -->
+      <div class="card">
+        <div class="card-header">
+          <h4>Current Reservations</h4>
+        </div>
+        <div class="card-body">
+          <ul id="tableList" class="list-group"></ul>
+        </div>
+      </div>
+
+      <!-- Wait List -->
+      <div class="card">
+        <div class="card-header">
+          <h4>Waiting List</h4>
+        </div>
+        <div class="card-body">
+          <ul id="waitList" class="list-group"></ul>
+        </div>
+      </div>
 
     </div>
   </section>
 </body>
 
 </html>
+
+<script type="text/javascript">
+
+  function runTableQuery() {
+    // Ajax funciton uses URL of API to GET data 
+    $.ajax({ url: "/api/tables", method: "GET" })
+      .then(tableData => {
+
+        // display data as object
+        console.log(tableData);
+        console.log("------------------------------------");
+
+        // Loop through each reservation
+        for (let i = 0; i < tableData.length; i++) {
+          let tableList = $("#tableList");
+          let listItem = $("<li class='list-group-item mt-4'>");
+
+          listItem.append(
+              $("h2>").text("Table #" + (i + 1)),
+              $("<hr>"),
+              $("<h2>").text("Name: " + tableData[i].name),
+              $("<h2>").text("Party Size: " + tableData[i].size)
+            );
+
+          tableList.append(listItem);
+        }
+      });
+  };
+
+  function runWaitlistQuery() {
+    // Ajax funciton uses URL of API to GET data 
+    $.ajax({ url: "/api/waitlist", method: "GET" })
+      .then(waitData => {
+
+        // display data as object
+        console.log(waitData);
+        console.log("------------------------------------");
+
+        // Loop through each reservation
+        for (let i = 0; i < waitData.length; i++) {
+          let tableList = $("#waitList");
+          let listItem = $("<li class='list-group-item mt-4'>");
+
+          listItem.append(
+              $("h2>").text("Table #" + (i + 1)),
+              $("<hr>"),
+              $("<h2>").text("Name: " + tableData[i].name),
+              $("<h2>").text("Party Size: " + tableData[i].size)
+            );
+
+          waitList.append(listItem);
+        }
+      });
+  };
+
+  runTableQuery();
+  runWaitlistQuery();
+
+</script>
