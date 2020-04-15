@@ -1,3 +1,10 @@
+body {
+    background-image: url("./images/burger.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .nav-link {
     color: white;
 }
