@@ -1,3 +1,7 @@
+.nav-link {
+    color: white;
+}
+
 .hero {
     /* Flexbox stuff */
     display: flex;
@@ -16,6 +20,6 @@
     background-size: cover;
 }
 
-.nav-link {
-    color: white;
-}
+/* .table-card {
+    
+} */

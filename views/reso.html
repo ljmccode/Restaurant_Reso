@@ -16,27 +16,20 @@
 
 <body>
   <nav class="navbar navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand text-warning" href="/">Sunny Grill</a>
+    <a class="navbar-brand text-warning" href="/">Feedlot Grill</a>
     <ul class="nav justify-content-end mr-3">
       <li class="nav-item active">
         <a class="nav-link" href="/">Home</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Reservations
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/reservations">Make a Reservation</a>
-          <a class="dropdown-item" href="/tables">View Waitlist</a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="/tables">Waitlist</a>
       </li>
     </ul>
   </nav>
   <section class="hero">
     <div class="hero-inner">
       <div class="card">
-        <div class=card-header>
+        <div class="card-header text-center">
           <h5>Dining with us tonight? <br> Please enter your information below and we'll find a table for you as soon as
             possible.</h5>
         </div>
@@ -54,7 +47,7 @@
               <label for="reserve-phone">Phone Number</label>
               <input type="tel" class="form-control" id="reserve-phone">
             </div>
-            <div class="reso-button">
+            <div class="text-center">
               <button type="submit" class="btn btn-primary submit">Find Table</button>
             </div>
           </form>

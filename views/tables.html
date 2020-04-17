@@ -16,27 +16,20 @@
 
 <body>
   <nav class="navbar navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand text-warning" href="/">Sunny Grill</a>
+    <a class="navbar-brand text-warning" href="/">Feedlot Grill</a>
     <ul class="nav justify-content-end mr-3">
       <li class="nav-item active">
         <a class="nav-link" href="/">Home</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Reservations
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/reservations">Make a Reservation</a>
-          <a class="dropdown-item" href="/tables">View Waitlist</a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="/tables">Waitlist</a>
       </li>
     </ul>
   </nav>
   <section class="hero">
     <div class="hero-inner">
       <!-- Current Tables in Use -->
-      <div class="card">
+      <div class="card table-card">
         <div class="card-header">
           <h4>Current Reservations</h4>
         </div>
@@ -46,7 +39,7 @@
       </div>
 
       <!-- Wait List -->
-      <div class="card">
+      <div class="card table-card">
         <div class="card-header">
           <h4>Waiting List</h4>
         </div>
@@ -64,7 +57,7 @@
 <script type="text/javascript">
 
   function runTableQuery() {
-    // Ajax funciton uses URL of API to GET data 
+    // Ajax function uses URL of API to GET data 
     $.ajax({ url: "/api/tables", method: "GET" })
       .then(tableData => {
 
@@ -78,7 +71,7 @@
           let listItem = $("<li class='list-group-item mt-4'>");
 
           listItem.append(
-              $("h2>").text("Table #" + (i + 1)),
+              $("<h2>").text("Table #" + (i + 1)),
               $("<hr>"),
               $("<h2>").text("Name: " + tableData[i].name),
               $("<h2>").text("Party Size: " + tableData[i].size)

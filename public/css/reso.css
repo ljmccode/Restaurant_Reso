@@ -31,16 +31,12 @@
     opacity: .9;
 }
 
-.card-header {
+/* .card-header {
     text-align: center;
-}
+} */
 
 .card-header h5 {
     line-height: 1.5em;
 }
 
-.reso-button {
-    text-align: center;
-    display: block;
-    margin: auto 0;
-}
+
