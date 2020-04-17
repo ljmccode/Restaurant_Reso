@@ -20,6 +20,27 @@
     background-size: cover;
 }
 
-/* .table-card {
-    
-} */
+.row {
+    width: 100vw;
+}
+
+.card {
+    display: flex;
+    margin: 15px;
+    height: 75vh;
+}
+
+.card-body {
+    padding-top: 0;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.card-body h4 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.card-body h5 {
+    font-size: 1em;
+}
+
