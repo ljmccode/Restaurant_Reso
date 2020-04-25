@@ -1,7 +1,17 @@
+/***************************
+Navbar
+***************************/
 .nav-link {
     color: white;
 }
 
+.nav-link:hover {
+    color: #FEC85C;
+}
+
+/***************************
+Main Container
+***************************/
 .hero {
     /* Flexbox stuff */
     position: relative;
@@ -31,12 +41,46 @@
     opacity: .9;
 }
 
-/* .card-header {
-    text-align: center;
-} */
-
 .card-header h5 {
     line-height: 1.5em;
 }
 
+.btn {
+    background-color: rgb(242,39,3);
+    color: white;
+}
 
+
+/***************************
+Media Queries
+***************************/
+/* Xtra Small Devices */
+@media (max-width: 346px) {
+    .navbar .container-fluid {
+        justify-content: center;
+    }
+ }
+
+/* Medium Devices */
+@media (min-width: 577px) and (max-width: 1024px) {
+    h1{ 
+        font-size: 3em;
+    }
+    .btn {
+        font-size: 1.5em;
+    }
+    .nav-link {
+        font-size: 1.5em;
+    }
+    nav img {
+        width: 250px;
+        margin: 5px;
+    }
+ }
+
+ /* Large Devices */
+ @media (min-width: 992px) { 
+    nav img {
+        width: 200px;
+    }
+ }

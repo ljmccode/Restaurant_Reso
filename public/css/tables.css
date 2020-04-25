@@ -1,9 +1,17 @@
+/***************************
+Navbar
+***************************/
 .nav-link {
     color: white;
 }
 
+.nav-link:hover {
+    color: #FEC85C;
+}
 
-
+/***************************
+Main Container
+***************************/
 .hero {
     /* Flexbox stuff */
     display: flex;
@@ -29,13 +37,25 @@
 .card {
     display: flex;
     margin: 15px;
-    max-height: 75vh;
+    min-height: 209px;
+    max-height: 25vh;
+    border: none;
 }
 
 .card-body {
     padding-top: 0;
     font-family: Arial, Helvetica, sans-serif;
-    /* background-color: rgb(52,58,64); */
+    background-color: rgb(52,58,64);
+    align-content: center;
+}
+
+.list-group-item {
+    background-color:rgb(25, 170, 170);
+    color: white;
+    width: 85%;
+    margin: auto;
+    min-height: 112px;
+    
 }
 
 .card-body h4 {
@@ -46,3 +66,51 @@
 .card-body h5 {
     font-size: 1em;
 }
+
+#noWaitlist h4 {
+    font-weight: normal;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/***************************
+Media Queries
+***************************/
+/* Xtra Small Devices */
+@media (max-width: 346px) {
+    .navbar .container-fluid {
+        justify-content: center;
+    }
+ }
+
+/* Medium Devices */
+@media (min-width: 577px) and (max-width: 1024px) {
+    h1{ 
+        font-size: 3em;
+    }
+    .btn {
+        font-size: 1.5em;
+    }
+    .nav-link {
+        font-size: 1.5em;
+    }
+    nav img {
+        width: 250px;
+        margin: 5px;
+    } 
+
+    .card {
+        max-height: 75vh;
+    }
+ }
+
+ /* Large Devices */
+ @media (min-width: 992px) { 
+    nav img {
+        width: 200px;
+    }
+
+    .card {
+        max-height: 75vh;
+    }
+ }
